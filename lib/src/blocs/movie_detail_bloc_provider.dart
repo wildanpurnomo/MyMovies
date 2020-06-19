@@ -15,8 +15,6 @@ class MovieDetailBlocProvider extends InheritedWidget {
   }
 
   static MovieDetailBloc of(BuildContext context) {
-    return (context.inheritFromWidgetOfExactType(MovieDetailBlocProvider)
-            as MovieDetailBlocProvider)
-        .bloc;
+    return context.dependOnInheritedWidgetOfExactType<MovieDetailBlocProvider>().bloc;
   }
 }
